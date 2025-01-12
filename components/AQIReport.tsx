@@ -6,7 +6,7 @@ import { Skeleton } from "./ui/skeleton";
 import WeatherReport from "./WeatherReport";
 
 export default function AQIReport() {
-    const [city, setCity] = useState("Chittoor");
+    const [city, setCity] = useState("Tirupati");
     const [aqiResult, setAqiResult] = useState<number | null>(null);
     const [statusText, setStatusText] = useState<string>("Unknown");
     const [pollutants, setPollutants] = useState<Record<string, number> | null>(null);
