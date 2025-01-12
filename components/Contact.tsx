@@ -60,7 +60,7 @@ export default function Contact() {
     };
 
     return (
-        <section className="z-50 py-10 bg-white relative top-[145vh] w-full">
+        <section className="z-50 py-10 bg-white relative top-[125vh] w-full">
             <div className="flex flex-col justify-center">
                 {/* Heading */}
                 <div className="text-center">

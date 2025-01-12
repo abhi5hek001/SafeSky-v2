@@ -5,7 +5,7 @@ import { FaExclamationTriangle } from "react-icons/fa";
 
 export default function Services() {
   return (
-    <section id="services" className="z-50 text-white opacity-60 relative top-[145vh] w-[100%] h-auto py-10">
+    <section id="services" className="z-50 text-white opacity-60 relative top-[125vh] w-[100%] h-auto py-10">
       <div className="flex flex-col">
 
         <div className="heading text-center pt-14">

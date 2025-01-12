@@ -73,7 +73,7 @@ export default function IntroPage() {
                         className="object-cover object-top"
                     />
                 </div>
-                <h1 data-scroll data-scroll-speed="0.7" className="z-30 text-white text-6xl uppercase font-bold tracking-title-spacing">Safe Sky</h1>
+                <h1 data-scroll data-scroll-speed="0.7" className="z-30 text-white px-5 text-6xl uppercase font-bold tracking-title-spacing">Safe Sky</h1>
             </div>
         </div>
     )

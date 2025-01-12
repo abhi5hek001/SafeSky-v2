@@ -17,7 +17,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="z-50 text-white opacity-80 relative top-[145vh] w-[100%] h-auto py-10">
+        <footer className="z-50 text-white opacity-80 relative top-[125vh] w-[100%] h-auto py-10">
             <div className="flex flex-wrap flex-col">
                 <div className="flex flex-wrap justify-around">
                     <div>

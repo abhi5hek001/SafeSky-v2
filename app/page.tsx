@@ -4,7 +4,7 @@ import Contact from "@/components/Contact";
 import IntroPage from "@/components/Intro";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
-import AQI from "@/components/AQI";
+import AQI from "@/components/AQIReport";
 
 export default function Home() {
   return (

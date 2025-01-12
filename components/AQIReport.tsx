@@ -3,19 +3,19 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "./ui/input";
 import { Skeleton } from "./ui/skeleton";
+import WeatherReport from "./WeatherReport";
 
-export default function AQI() {
+export default function AQIReport() {
     const [city, setCity] = useState("Chittoor");
     const [aqiResult, setAqiResult] = useState<number | null>(null);
     const [statusText, setStatusText] = useState<string>("Unknown");
-    const [pollutants, setPollutants] = useState<Record<string, number> | null>(
-        null
-    );
+    const [pollutants, setPollutants] = useState<Record<string, number> | null>(null);
+    const [coordinates, setCoordinates] = useState({ lat: 13.62, lon: 79.42 });
     const [error, setError] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(false); // To track loading state
+    const [loading, setLoading] = useState<boolean>(false);
 
-    const NEXT_PUBLIC_GEOCODING_API_KEY = process.env.NEXT_PUBLIC_GEOCODING_API_KEY; // Replace with your geocoding API key
-    const NEXT_PUBLIC_AQI_API_KEY = process.env.NEXT_PUBLIC_AQI_API_KEY; // Replace with your AQI API key
+    const NEXT_PUBLIC_GEOCODING_API_KEY = process.env.NEXT_PUBLIC_GEOCODING_API_KEY;
+    const NEXT_PUBLIC_AQI_API_KEY = process.env.NEXT_PUBLIC_AQI_API_KEY;
 
     const colors: Record<number | "Unknown", string> = {
         1: 'text-green-600',      // Good
@@ -56,7 +56,7 @@ export default function AQI() {
         setError(null);
         setAqiResult(null);
         setPollutants(null);
-        setLoading(true); // Set loading to true when data fetching starts
+        setLoading(true);
 
         try {
             // Fetch latitude and longitude
@@ -74,6 +74,7 @@ export default function AQI() {
             }
 
             const { lat, lon } = geoData[0];
+            setCoordinates({ lat, lon });
 
             // Fetch AQI data
             const aqiRes = await fetch(
@@ -94,7 +95,7 @@ export default function AQI() {
         } catch (err) {
             setError((err as Error).message);
         } finally {
-            setLoading(false); // Set loading to false when data fetching completes
+            setLoading(false);
         }
     };
 
@@ -114,7 +115,7 @@ export default function AQI() {
     };
 
     return (
-        <div className="flex flex-wrap justify-center items-center z-50 relative w-[1/3] top-[120vh]">
+        <div className="flex flex-wrap gap-[10vw] justify-around items-center z-50 relative w-[1/3] top-[120vh]">
             <div className="opacity-90 text-white shadow-md" style={{ height: '400px' }}>
                 <form id="AQI-form" onSubmit={handleSubmit}>
                     <Input
@@ -128,9 +129,9 @@ export default function AQI() {
                     />
                     <button
                         type="submit"
-                        className="mt-2 bg-blue-500 xs:w-[10vw] sm:w-[10vw] md:w-[8vw] lg:w-[8vw] text-white px-4 py-2 rounded"
+                        className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
                     >
-                        Find AQI
+                        Find Details
                     </button>
                 </form>
 
@@ -194,6 +195,7 @@ export default function AQI() {
                     )
                 )}
             </div>
+            <WeatherReport lat={coordinates.lat} lon={coordinates.lon} />
         </div>
     );
 }
