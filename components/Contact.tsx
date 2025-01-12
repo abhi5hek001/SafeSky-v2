@@ -39,7 +39,7 @@ export default function Contact() {
 
         // Create the mailto link
         const subject = 'User Feedback';
-        const mailtoLink = `mailto:safesky.by.vishist@gmail.com` +
+        const mailtoLink = `mailto:sahayabhishek.edu@gmail.com` +
             `?subject=${encodeURIComponent(subject)}` +
             `&body=${encodeURIComponent(comments)}` +
             `\n\nName: ${encodeURIComponent(name)}` +
