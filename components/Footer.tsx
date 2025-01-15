@@ -6,13 +6,13 @@ import { FaEnvelope, FaGithub, FaHome, FaLinkedin, FaPhone } from "react-icons/f
 export default function Footer() {
     const socialLinks = [
         { href: "https://www.linkedin.com/in/abhi5hek001/", icon: <FaLinkedin className="h-5 w-5 text-green-600" /> },
-        { href: "mailto:safesky.by.vishist@gmail.com", icon: <FaEnvelope className="h-5 w-5 text-green-600" /> },
+        { href: "mailto:sahayabhishek.edu@gmail.com", icon: <FaEnvelope className="h-5 w-5 text-green-600" /> },
         { href: "https://github.com/abhi5hek001", icon: <FaGithub className="h-5 w-5 text-green-600" /> },
     ];
 
     const contactInfo = [
         { icon: <FaPhone className="h-5 w-5 mx-2" />, text: "+91 96967 88599" },
-        { icon: <FaEnvelope className="h-5 w-5 mx-2" />, text: "safesky.by.vishist@gmail.com", href: "mailto:safesky.by.vishist@gmail.com" },
+        { icon: <FaEnvelope className="h-5 w-5 mx-2" />, text: "sahayabhishek.edu@gmail.com", href: "mailto:sahayabhishek.edu@gmail.com" },
         { icon: <FaHome className="h-5 w-5 mx-2" />, text: (<>IIIT Sri City, 630, Gnan Marg Sri City, Sathyavedu,<br /> Andhra Pradesh, 517646 </>) },
     ];
 
